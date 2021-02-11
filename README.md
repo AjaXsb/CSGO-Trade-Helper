@@ -1,1 +1,1 @@
-# Trade-Helper
+A helper application for traders to quickly find out prices and values essential for fast stonks!
