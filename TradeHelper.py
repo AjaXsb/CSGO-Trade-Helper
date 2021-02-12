@@ -4,7 +4,6 @@ import re
 import json
 import webbrowser
 
-
 root = Tk()
 root.geometry("700x350")
 root.title("Trade Helper by AjaX")
@@ -439,8 +438,6 @@ def showbuff():
     showbuff = Label(root, text="Buff value is " + str(buffvalue)) 
     showbuff.grid(row=10, column=1)
 
-    
-
     showbuffqs = Label(root, text="                                                                 ") 
     showbuffqs.grid(row=10, column=2)
     showbuffqs = Label(root, text="Buff to INR (11.5) is ₹ " + str(buffqs)) 
@@ -456,8 +453,6 @@ def showbuff():
     showbuffaftertax.grid(row=12, column=1)
     showbuffaftertax = Label(root, text="After tax " + str(after_tax)) 
     showbuffaftertax.grid(row=12, column=1)
-
-    
 
     showbuffaftertax = Label(root, text="                                                            ")
     showbuffaftertax.grid(row=12, column=2)
