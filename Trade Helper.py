@@ -8,7 +8,6 @@ import webbrowser
 root = Tk()
 root.geometry("700x350")
 root.title("Trade Helper by AjaX")
-root.iconbitmap("D:\Chikku\Pics\icons/th.ico")
 
 mylabel = Label(root, text="Trade Helper by AjaX", font=("arial"))
 mylabel.place(relx=0.35)
