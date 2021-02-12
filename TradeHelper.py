@@ -427,9 +427,12 @@ def showbuff():
 
     buffvalue = buff.get()
 
-    buffqs = int(buffvalue) * 11.5
-    after_tax = int(buffvalue) - (int(buffvalue) * 0.025)
-    bufftors =  int(after_tax) * 11.5
+    buffqs = float(buffvalue) * 11.5
+    buffqs = round(buffqs, 2)
+    after_tax = float(buffvalue) - (float(buffvalue) * 0.025)
+    after_tax = round(after_tax, 2)
+    bufftors =  float(after_tax) * 11.5
+    bufftors = round(bufftors, 2)
  
     showbuff = Label(root, text="                                                                  ") 
     showbuff.grid(row=10, column=1)
