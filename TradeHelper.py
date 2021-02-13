@@ -25,7 +25,7 @@ empty.grid(row=0, column=0)
 empty1 = Label(root, text=" ")
 empty1.grid(row=1, column=0)
 
-drop1 = OptionMenu(root, category, "Pistols", "Rifles", "SMGs", "Heavy", "Knives")
+drop1 = OptionMenu(root, category, "Pistols", "Rifles", "SMGs", "Heavy", "Knives", "Gloves")
 drop1.grid(row=2, column=0)
 
 def show_items(*args):
@@ -45,6 +45,8 @@ def show_items(*args):
     elif category.get() == "Knives":
         show_knives()
 
+    elif category.get() == "Gloves":
+        show_gloves()
 
 def show_pistols():
     item.set("Pistols")
@@ -71,6 +73,12 @@ def show_knives():
     items = OptionMenu(root, item, "Bayonet", "Butterfly Knife", "Bowie Knife", "Flip Knife", "Karambit", "Gut Knife", "Falchion Knife", 
     "Huntsman Knife", "M9 Bayonet", "Navaja Knife", "Shadow Daggers", "Stilleto Knife", "Talon Knife", "Ursus Knife", "Classic Knife",
     "Paracord Knife", "Survival Knife", "Skeleton Knife", "Nomad Knife")
+    items.grid(row=2, column=1)
+
+def show_gloves():
+    item.set("Gloves")
+    items = OptionMenu(root, item, "Broken Fang Gloves", "Hydra Gloves", "Bloodhound Gloves", "Driver Gloves", "Hand Wraps",
+    "Moto Gloves", "Specialist Gloves", "Sport Gloves")
     items.grid(row=2, column=1)
 
 
@@ -149,7 +157,6 @@ def show_skins(*args):
 
 
 #RIFLES
-
     elif item.get() == "AK-47":
         skins = OptionMenu(root, skin, "Aquamarine Revenge", "Asiimov", "Baroque Purple", "Black Laminate", "Bloodsport", "Blue Laminate",
         "Cartel", "Case Hardened", "Elite Build", "Emerald Pinstripe", "Fire Serpent", "First Class", "Frontside Misty", "Fuel Injector", 
@@ -421,16 +428,55 @@ def show_skins(*args):
         skins.grid(row=2, column=2)
 
 
+#GLOVES
+    elif item.get() == "Broken Fang Gloves":
+        skins = OptionMenu(root, skin, "Jade", "Needle Point", "Unhinged", "Yellow-banded")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Sport Gloves":
+        skins = OptionMenu(root, skin, "Amphibious", "Arid", "Big Game", "Bronze Morph", "Hedge Maze", "Nocts", "Omega",
+        "Pandora's Box", "Scarlet Shamagh", "Slingshot", "Superconductor", "Vice")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Specialist Gloves":
+        skins = OptionMenu(root, skin, "Buckshot", "Crimson Kimono", "Crimson Web", "Emerald Web", "Fade", "Field Agent",
+        "Forest DDPAT", "Foundation", "Lt. Commander", " Marble Fade", "Mogul", "Tiger Strike")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Moto Gloves":
+        skins = OptionMenu(root, skin, "3rd Commando Company", "Blood Pressure", "Boom!", "Cool Mint", "Eclipse", "Finish Line",
+        "Polygon", "POW!", "Smoke Out", "Spearmint", "Transport", "Turtle")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Hand Wraps":
+        skins = OptionMenu(root, skin, "Arboreal", "Badlands", "CAUTION!", "Cobalt Skulls", "Constrictor", "Desert Shamagh",
+        "Duct Tape", "Giraffe", "Leather", "Overprint", "Slaughter", "Spruce DDPAT")
+        skins.grid(row=2, column=2)
+        
+    elif item.get() == "Driver Gloves":
+        skins = OptionMenu(root, skin, "Black Tie", "Convoy", "Crimson Weave", "Diamondback", "Imperial Plaid", "King Snake",
+        "Lunar Weave", "Overtake", "Queen Jaguar", "Racing Green", "Rezan the Red", "Snow Leopard")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Bloodhound Gloves":
+        skins = OptionMenu(root, skin, "Bronzed", "Charred", "Guerrilla", "Snakebite")
+        skins.grid(row=2, column=2)
+
+    elif item.get() == "Hydra Gloves":
+        skins = OptionMenu(root, skin, "Case Hardened", "Emerald", "Mangrove", "Rattler")
+        skins.grid(row=2, column=2)
+
 #MAIN SHOW FUNCTIONS
 def showbuff():
 
     buffvalue = buff.get()
+    multipliervalue = multiplier.get()
 
-    buffqs = float(buffvalue) * 11.5
+    buffqs = float(buffvalue) * float(multipliervalue)
     buffqs = round(buffqs, 2)
     after_tax = float(buffvalue) - (float(buffvalue) * 0.025)
     after_tax = round(after_tax, 2)
-    bufftors =  float(after_tax) * 11.5
+    bufftors =  float(after_tax) * float(multipliervalue)
     bufftors = round(bufftors, 2)
  
     showbuff = Label(root, text="                                                                  ") 
@@ -440,7 +486,7 @@ def showbuff():
 
     showbuffqs = Label(root, text="                                                                 ") 
     showbuffqs.grid(row=10, column=2)
-    showbuffqs = Label(root, text="Buff to INR (11.5) is ₹ " + str(buffqs)) 
+    showbuffqs = Label(root, text="Buff to INR (" + str(multipliervalue) + ") is ₹ " + str(buffqs))
     showbuffqs.grid(row=10, column=2)
 
     empty11 = Label(root, text=" ")
@@ -456,7 +502,7 @@ def showbuff():
 
     showbuffaftertax = Label(root, text="                                                            ")
     showbuffaftertax.grid(row=12, column=2)
-    showbuffaftertax = Label(root, text="After tax to INR (11.5) is ₹ " + str(bufftors))
+    showbuffaftertax = Label(root, text="After tax to INR (" + str(multipliervalue) + ") is ₹ " + str(bufftors))
     showbuffaftertax.grid(row=12, column=2)
 
 def showvalues():
@@ -466,7 +512,7 @@ def showvalues():
     stat_trak = stattrak.get()
     category_name = category.get()
     
-    if category_name == "Knives":
+    if category_name == "Knives" or category_name == "Gloves":
 
         if skin_name == "Vanilla":
             
@@ -547,6 +593,12 @@ enterbuff.grid(row=8, column=0)
 
 buff = Entry(root)
 buff.grid(row=8, column=1)
+
+entermulti = Label(root, text="Multiplier:")
+entermulti.grid(row=8, column=2)
+
+multiplier = Entry(root)
+multiplier.grid(row=8, column=3)
 
 empty9 = Label(root, text=" ")
 empty9.grid(row=9, column=0)
