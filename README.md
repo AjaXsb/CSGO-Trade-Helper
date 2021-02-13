@@ -1,1 +1,1 @@
-A helper application for traders to quickly find out prices and values essential for fast stonks!
+A helper application for CSGO traders to quickly find out prices and values essential for fast stonks!
