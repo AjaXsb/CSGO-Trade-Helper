@@ -71,7 +71,7 @@ def show_heavy():
 def show_knives():
     item.set("Knives")
     items = OptionMenu(root, item, "Bayonet", "Butterfly Knife", "Bowie Knife", "Flip Knife", "Karambit", "Gut Knife", "Falchion Knife", 
-    "Huntsman Knife", "M9 Bayonet", "Navaja Knife", "Shadow Daggers", "Stilleto Knife", "Talon Knife", "Ursus Knife", "Classic Knife",
+    "Huntsman Knife", "M9 Bayonet", "Navaja Knife", "Shadow Daggers", "Stiletto Knife", "Talon Knife", "Ursus Knife", "Classic Knife",
     "Paracord Knife", "Survival Knife", "Skeleton Knife", "Nomad Knife")
     items.grid(row=2, column=1)
 
@@ -384,7 +384,7 @@ def show_skins(*args):
         "Ultraviolet", "Urban Masked")
         skins.grid(row=2, column=2)
 
-    elif item.get() == "Stilleto Knife":
+    elif item.get() == "Stiletto Knife":
         skins = OptionMenu(root, skin, "Vanilla", "Blue Steel", "Boreal Forest", "Case Hardened", "Crimson Web", "Damascus Steel", "Doppler", 
         "Fade", "Forest DDPAT", "Marble Fade", "Night", "Rust Coat", "Safari Mesh", "Scorched", "Slaughter", "Stained", "Tiger Tooth", 
         "Ultraviolet", "Urban Masked")
